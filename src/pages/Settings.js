@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Pressable } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -8,11 +8,22 @@ const Settings = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings Screen</Text>
-      <Text style={styles.h2}>Info passed from page 2</Text>
+      {/* <Text style={styles.h2}>Info passed from page 2</Text>
       <Text style={styles.text}>Passed Name: {name}</Text>
       <Text style={styles.text}>Passed Age: {age}</Text>
-      <Text style={styles.text}>Passed Number: {number}</Text>
-      <Button onPress={() => navigation.popToTop()} title="Go back home"/>
+      <Text style={styles.text}>Passed Number: {number}</Text> */}
+      <Pressable
+              onPress={() => navigation.navigate("Home")}
+              style={({ pressed }) => ({
+                backgroundColor: pressed ? "#f18181" : "crimson",
+                padding: 12,
+                borderRadius: 8,
+                borderWidth: 2,
+                borderColor: "red",
+              })}
+            >
+              <Text style={styles.bt}>Go back to Home</Text>
+            </Pressable>
     </View>
   );
 };
@@ -29,6 +40,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
+    marginBottom: 20,
   },
 
   h2: {
@@ -39,5 +51,10 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     textAlign: "start",
     padding: 10,
+  },
+
+  bt: {
+    color: "white",
+    fontWeight: "900",
   },
 });

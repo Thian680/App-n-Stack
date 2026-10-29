@@ -1,18 +1,19 @@
-import { StyleSheet, View, Button, Text, TextInput} from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, View, Text, TextInput, Pressable} from "react-native";
+import React, { useState } from "react"
 import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
-  const [info_name, setName] = useState("");
-  const [info_age, setAge] = useState("");
-  const [info_number, setNumber] = useState("");
+  // const [info_name, setName] = useState("");
+  // const [info_age, setAge] = useState("");
+  // const [info_number, setNumber] = useState("");
+  // const [isHovered, setHovered] = useState(false)
 
   return (
     <View style={styles.container}>
       <Text style={styles.h2}>Welcome to Home Screen!</Text>
-      <Text>Enter Info Here</Text>
+      {/* <Text>Enter Info Here</Text>
       <TextInput
         style={styles.input}
         placeholder="Enter Full Name"
@@ -37,16 +38,19 @@ const Home = () => {
         maxLength={11}
       />
 
-      <Button
-        onPress={() =>
+      <Pressable
+        style={styles.button}
+        onHoverIn={() => setHovered(true)}
+        onPressIn={() =>
           navigation.navigate("Profile", {
             name: info_name,
             age: info_age,
             number: info_number,
           })
         }
-        title="Go to Profile"
-      />
+      >
+        <Text>Go to Profile</Text>
+      </Pressable> */}
     </View>
   );
 };
@@ -62,6 +66,7 @@ const styles = StyleSheet.create({
 
   h2: {
     margin: 10,
+    fontSize: 20,
     fontWeight: 'bold',
   },
 
@@ -72,5 +77,11 @@ const styles = StyleSheet.create({
     borderWidth:2,
     borderColor: 'black',
     margin: 5
+  },
+  button: {
+    padding: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    backgroundColor: 'red',
   }
 });

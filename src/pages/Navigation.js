@@ -4,6 +4,7 @@ import React from "react";
 import Homepage from "./Home";
 import Profile from "./Profile";
 import Settings from "./Settings";
+import Friends from "./Friends";
 
 const Navigation = () => {
   const Stack = createNativeStackNavigator();
@@ -13,16 +14,18 @@ const Navigation = () => {
         headerShown: true,
         headerStyle: { backgroundColor: "darkred" },
         headerTintColor: "#fff",
-        headerTitleStyle: { 
+        headerTitleStyle: {
           fontWeight: "bold",
-          fontSize: 22 },
-        headerTitleAlign: 'center'   
+          fontSize: 22,
+        },
+        headerTitleAlign: "center",
       }}
     >
       <Stack.Group>
         <Stack.Screen name="Home sreen" component={Homepage} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Friends" component={Friends} />
       </Stack.Group>
     </Stack.Navigator>
   );
