@@ -25,22 +25,39 @@ const BottomNav = () => {
             iconName = focused ? "people" : "people-outline";
           }
 
-          return <Ionicons name={iconName} size={size} />;
+          return <Ionicons name={iconName} size={size} color={color} />;
         },
 
+        tabBarActiveTintColor: "blue", // color of the selected tab (icon and label)
+        tabBarInactiveTintColor: "blue", // color of the other tabs (icon and label)
+
         tabBarStyle: {
-            backgroundColor: '#f5f5f5f5',
-            overflow: 'hidden',
-            height: 65,
-            borderTopWidth: 2,
-            borderTopColor: 'red',
-        }
+          backgroundColor: "white",
+          overflow: "hidden",
+          height: 65,
+          borderTopWidth: 3,
+          borderTopColor: "darkblue",
+        },
+
+        headerStyle: {
+          borderBottomColor: "darkblue",
+          borderBottomWidth: 3,
+          backgroundColor: "white",
+        },
+
+        headerTintColor: "blue",
+        headerTitleStyle: { fontSize: 30, fontWeight: "bold" },
+        headerTitleAlign: "center",
       })}
     >
       <Tabs.Group>
         <Tabs.Screen name="Home" component={Homepage} />
         <Tabs.Screen name="Profile" component={Profile} />
-        <Tabs.Screen name='Friends' component={Friends} options={{tabBarBadge:1}}/>
+        <Tabs.Screen
+          name="Friends"
+          component={Friends}
+          options={{ tabBarBadge: 1 }}
+        />
         <Tabs.Screen name="Settings" component={Settings} />
       </Tabs.Group>
     </Tabs.Navigator>

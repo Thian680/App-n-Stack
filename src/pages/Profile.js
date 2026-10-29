@@ -17,7 +17,7 @@ const Profile = ({ route }) => {
         <Text style={styles.text}>Age: 18</Text>
         <Text style={styles.text}>Email: ianmonsalud@gmail.com</Text>
         <Text style={styles.text}>
-          Bio: Welcome to our platform. This is a very short description
+          Bio: Welcome to our platform. Please have mercy :C
         </Text>
       </View>
       {/* <Text style={styles.h2}>Info passed from page 1</Text>
@@ -25,17 +25,17 @@ const Profile = ({ route }) => {
       <Text style={styles.text}>Passed Age: {age}</Text>
       <Text style={styles.text}>Passed Number: {number}</Text> */}
       <Pressable
-        onPress={() => navigation.navigate("Home")}
-        style={({ pressed }) => ({
-          backgroundColor: pressed ? "#f18181" : "crimson",
-          padding: 12,
-          borderRadius: 8,
-          borderWidth: 2,
-          borderColor: "red",
-        })}
-      >
-        <Text style={styles.bt}>Go back to Home</Text>
-      </Pressable>
+          onPress={() => navigation.navigate("Home")}
+          style={({ pressed }) => ({
+            backgroundColor: pressed ? "#5b64e0" : "blue",
+            padding: 12,
+            borderRadius: 8,
+            borderWidth: 2,
+            borderColor: "blue",
+          })}
+        >
+          <Text style={styles.bt}>Go back to Home</Text>
+        </Pressable>
     </View>
   );
 };

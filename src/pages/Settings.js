@@ -15,11 +15,11 @@ const Settings = ({ route }) => {
       <Pressable
               onPress={() => navigation.navigate("Home")}
               style={({ pressed }) => ({
-                backgroundColor: pressed ? "#f18181" : "crimson",
+                backgroundColor: pressed ? "#5b64e0" : "blue",
                 padding: 12,
                 borderRadius: 8,
                 borderWidth: 2,
-                borderColor: "red",
+                borderColor: "blue",
               })}
             >
               <Text style={styles.bt}>Go back to Home</Text>

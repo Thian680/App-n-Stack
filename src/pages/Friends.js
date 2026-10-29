@@ -4,6 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 
 const Friends = () => {
 
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Friends Screen!</Text>
@@ -19,17 +21,17 @@ const Friends = () => {
       </View>
 
       <Pressable
-              onPress={() => navigation.navigate("Home")}
-              style={({ pressed }) => ({
-                backgroundColor: pressed ? "#f18181" : "crimson",
-                padding: 12,
-                borderRadius: 8,
-                borderWidth: 2,
-                borderColor: "red",
-              })}
-            >
-              <Text style={styles.bt}>Go back to Home</Text>
-            </Pressable>
+            onPress={() => navigation.navigate("Home")}
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#5b64e0" : "blue",
+              padding: 12,
+              borderRadius: 8,
+              borderWidth: 3,
+              borderColor: "blue",
+            })}
+          >
+            <Text style={styles.bt}>Go back to Home</Text>
+        </Pressable>
     </View>
   );
 };
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "#2729c0",
+    backgroundColor: "#9d43d1",
     padding: 20,
     borderRadius: 20,
     margin: 30,
